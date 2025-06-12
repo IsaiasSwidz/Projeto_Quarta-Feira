@@ -1,0 +1,10 @@
+:root {
+    --amarelo-claro: #FFC300;
+    --amarelo-um-pouco-escuro: #C29503;
+    --amarelo-um-pouco-mais-escuro:rgba(194, 149, 3, 0.75);
+    --amarelo-muito-escura:rgba(194, 149, 3, 0.5);
+    --preto: #0B0C0C;
+    --branco: #E9EAEC;
+    --branco-borda: #E0E0E0;
+    --texto-placeholder: #2A2E34;
+}

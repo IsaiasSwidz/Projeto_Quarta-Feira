@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de conta</title>
+    <link rel="stylesheet" href="../css/AccountCreation.css">
+    <link rel="stylesheet" href="../assets/theme.css">
+    <link rel="script" src="../js/AccountCreation.js"></link>
+</head>
+<body>
+    <!--Estrutura da criação da conta do usuário-->
+
+    <!-- Container que armazenará as labels, images, buttons, etc... -->
+    <div id="container">
+        <div id="container-form">
+            <h1>Bem vindo!</h1>
+            <input type="text" name="nome" placeholder="Nome completo"  id="nome" required>
+            <input type="email" name="email" placeholder="E-Mail Válido" id="email" required>
+            <input type="tel" name="celular" placeholder="Celular (com DDD)" id="celular" required>
+            <input type="password" name="senha" placeholder="Senha" id="senha" required>
+            <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" id="confirmar_senha" required>
+            
+            <input type="file" name="documento" id="documento" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" required>
+            <button type="button" id="btn-anexar">
+                Documento com foto
+                <img src="../img/Import.png" alt="" class="icon-import">
+            </button>
+            <span id="file-chosen"></span>
+
+
+            <a href="/Projeto_LogAe/html/Login.html"><button type="submit">Cadastrar</button></a>
+            <a href="/Projeto_LogAe/html/Login.html"><button>Faça seu login!</button></a>
+        </div>
+    </div>
+    <script src="../js/AccountCreation.js" defer></script>
+</body>
+</html>
