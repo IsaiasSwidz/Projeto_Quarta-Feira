@@ -4,10 +4,7 @@ html {
 }
 
 body {
-    background: url("../img/BackgroundLogin.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
+    background-color: var(--preto);
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -19,6 +16,7 @@ body * {
 }
 
 #container {
+    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -27,6 +25,8 @@ body * {
 }
 
 #container-form {
+    position: relative;
+    z-index: 99;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,4 +86,53 @@ input[type=password]::placeholder {
     margin-right: 0;
     padding: 0;
     padding-right: 10px;
+}
+
+.background {
+    position: absolute;
+    z-index: 1;
+}
+
+#bar-right {
+    right: 0;
+    top: 0;
+    width: 15%;
+}
+
+#bar-left {
+    left: 0;
+    bottom: 0;
+    width: 15%;
+}
+
+#comb-right {
+    right: 22%;
+    top: 30%;
+    width: 15%;
+}
+
+#comb-left {
+    left: 27%;
+    bottom: 10%;
+    width: 15%;
+}
+
+#triangle-left {
+    left: 0;
+    top: 0;
+    width: 60%;
+}
+
+#icon-left {
+    display: flex;
+    align-items: center;
+    left: 5%;
+    top: 3%;
+    width: 2.5%;
+    z-index: 2;
+}
+
+#icon-left-text {
+    font-size: 2rem;
+    font-weight: bold;
 }
