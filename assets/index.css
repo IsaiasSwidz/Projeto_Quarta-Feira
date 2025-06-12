@@ -7,4 +7,22 @@
     --branco: #E9EAEC;
     --branco-borda: #E0E0E0;
     --texto-placeholder: #2A2E34;
+    --azul: #013565
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--preto);
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body * {
+    font-family: sans-serif;
+    color: var(--preto);
 }

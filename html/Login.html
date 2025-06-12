@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/theme.css">
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../assets/index.css">
+    <link rel="script" src="../js/Login.js"></link>
     <title>Página de Login</title>
 </head>
 <body>
@@ -11,16 +13,31 @@
 
     <!-- Container que armazenará as labels, images, buttons, etc... -->
     <div id="container">
-        <h1>Bem vindo!</h1>
-        <p>Por favor, realize seu Login!</p>
-        <div id="contnet-container">
-            <input type="number" name="cpf" placeholder="CPF" id="cpf" required>
-            <input type="password" name="senha" placeholder="Senha" id="senha" required>
-            <input type="checkbox" name="lembrar" id="lembrar"><label for="lembrar">Lembre-se de mim</label>
-            <button type="submit">Login</button>
+        <div id="container-background">
+            <img class="background" id="triangle-left" src="../img/TriangleLeft.png" alt="">
+            <div class="background" id="icon-left">
+                <img src="../img/IconBlackForYellowBackground.png" alt="">
+                <p id="icon-left-text">Chronora</p>
+            </div>
+            <img class="background" id="bar-right" src="../img/BarDescending.png" alt="">
+            <img class="background" id="bar-left" src="../img/BarAscending.png" alt="">
+            <img class="background" id="comb-right" src="../img/Comb1.png" alt="">
+            <img class="background" id="comb-left" src="../img/Comb2.png" alt="">
         </div>
-        <p>Não possuí cadastro? <a href="AccountCreation.html">Crie sua conta aqui!</a></p>
-        <a href="ForgotPassword.html">Esqueci minha senha</a>
+        <div id="container-form">
+            <h1>Bem vindo de volta!</h1>
+            <input type="number" name="cpf" placeholder="CPF" id="input-cpf" required>
+            <input type="password" name="senha" placeholder="Senha" id="input-password" required>
+            <div id="bottom-inputs-container">
+                <input type="checkbox" name="remember-me" id="checkbox-remeber-me" class="checkbox">
+                <label for="checkbox-remeber-me">Lembre-se de mim</label>
+                <a href="ForgotPassword.html" id="a-forgot-password">Esqueceu a senha?</a>
+            </div>
+
+            <a href="Main.html" id="a-login"><button type="submit" id="btn-login">Entrar</button></a>
+            <a href="AccountCreation.html" id="a-cadastrar"><button id="btn-cadastrar">Criar Conta</button></a>
+        </div>
     </div>
+    <script src="../js/AccountCreation.js"></script>
 </body>
 </html>

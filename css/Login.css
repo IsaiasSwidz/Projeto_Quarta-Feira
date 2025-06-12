@@ -25,9 +25,7 @@
     margin-bottom: 10%;
 }
 
-input[type=text],
-input[type=email],
-input[type=tel],
+input[type=number],
 input[type=password] {
     font-size: 25px;
     background: var(--branco);
@@ -38,38 +36,53 @@ input[type=password] {
     width: 70%;
 }
 
-input[type=text]::placeholder,
-input[type=email]::placeholder,
-input[type=tel]::placeholder,
+input[type=number]::placeholder,
 input[type=password]::placeholder {
     color: var(--texto-placeholder);
 }
 
-#btn-anexar {
+#bottom-inputs-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 25px;
-    color: var(--amarelo-um-pouco-escuro);
-    font-weight: bold;
-    background: var(--branco);
-    border: 3px solid var(--amarelo-um-pouco-escuro);
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-    width: 74.5%;
+    gap: 10px;
+    margin: 5px 0;
     padding: 10px;
-    padding-left: 20px;
-    padding-right: 0; /* garante borda direita limpa */
-    position: relative;
-    cursor: pointer;
+    width: 70%;
 }
 
-#btn-anexar .icon-import {
-    width: 40px;
-    height: 40px;
-    margin-left: auto;
-    margin-right: 0;
-    padding: 0;
-    padding-right: 10px;
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.checkbox + label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 16px; /* Ajuste conforme necessário */
+    user-select: none;
+}
+
+.checkbox + label::before {
+    content: "";
+    background: url('../img/UncheckedCheckbox.png') no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.checkbox:checked + label::before {
+    background-image: url('../img/CheckedCheckbox.png');
+}
+
+#a-forgot-password {
+    color: var(--azul);
+    font-style: italic;
 }
 
 #a-cadastrar {
