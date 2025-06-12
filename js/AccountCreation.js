@@ -1,4 +1,4 @@
-document.getElementById('btn-anexar').addEventListener('click', function() {
+document.getElementById('btn-annex').addEventListener('click', function() {
     document.getElementById('input-file').click();
 });
 
