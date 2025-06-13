@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de serviço</title>
+    <link rel="stylesheet" href="../css/AccountCreation.css">
+    <link rel="stylesheet" href="../assets/index.css">
+    <link rel="script" src="../js/AccountCreation.js"></link>
+</head>
+<body>
+    <div id="container">
+        <div id="container-background">
+            <img class="background" id="triangle-left" src="../img/TriangleLeft.png" alt="">
+            <div class="background" id="icon-left">
+                <img id="icon-left-img" src="../img/LogoBackgroundYellow.png" alt="">
+                <p id="icon-left-text">Chronora</p>
+            </div>
+            <img class="background" id="bar-right" src="../img/BarDescending.png" alt="">
+            <img class="background" id="bar-left" src="../img/BarAscending.png" alt="">
+            <img class="background" id="comb-right" src="../img/Comb1.png" alt="">
+            <img class="background" id="comb-left" src="../img/Comb2.png" alt="">
+        </div>
+        <div id="container-form">
+            <h1>Bem vindo!</h1>
+            <input type="text" name="nome" placeholder="Nome completo"  id="input-name" required>
+            <input type="email" name="email" placeholder="E-Mail Válido" id="input-email" required>
+            <input type="tel" name="celular" placeholder="Celular (com DDD)" id="input-phone-number" required>
+            <input type="password" name="senha" placeholder="Senha" id="input-password" required>
+            <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" id="input-confirm-password" required>
+            
+            <input type="file" name="input-file" id="input-file" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" required>
+            <button type="button" id="btn-annex">
+                Documento com foto
+                <img src="../img/Import.png" alt="" class="icon-import">
+            </button>
+            <span id="file-chosen"></span>
+
+            <a href="Login.html" id="a-register"><button type="submit" id="btn-register">Criar Conta</button></a>
+            <a href="Login.html" id="a-login"><button id="btn-login">Entrar</button></a>
+        </div>
+    </div>
+    <script src="../js/AccountCreation.js"></script>
+</body>
+</html>
