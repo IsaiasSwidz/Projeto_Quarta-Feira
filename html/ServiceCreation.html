@@ -1,45 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criação de serviço</title>
-    <link rel="stylesheet" href="../css/AccountCreation.css">
+    <title>Chronora</title>
+    <link rel="stylesheet" href="../css/ServiceCreation.css">
     <link rel="stylesheet" href="../assets/index.css">
-    <link rel="script" src="../js/AccountCreation.js"></link>
 </head>
 <body>
     <div id="container">
-        <div id="container-background">
-            <img class="background" id="triangle-left" src="../img/TriangleLeft.png" alt="">
-            <div class="background" id="icon-left">
+        <div id="container-header">
+            <div id="icon-left">
                 <img id="icon-left-img" src="../img/LogoBackgroundYellow.png" alt="">
                 <p id="icon-left-text">Chronora</p>
             </div>
-            <img class="background" id="bar-right" src="../img/BarDescending.png" alt="">
-            <img class="background" id="bar-left" src="../img/BarAscending.png" alt="">
-            <img class="background" id="comb-right" src="../img/Comb1.png" alt="">
-            <img class="background" id="comb-left" src="../img/Comb2.png" alt="">
+            <div id="search-bar">
+                <div class="search-container">
+                    <input type="text" name="search-bar" placeholder="Pintura de parede, aula de inglês..." id="input-search-bar">
+                    <img src="../img/Search.png" alt="" class="icon-search">
+                </div>
+            </div>
+            <div id="navbar-buttons">
+                <a class="navbar-a" href="ServiceCreation.html"><img class="navbar-buttons-img" id="icon-add-service" src="../img/Plus.png" alt=""></a>
+                <div id="qty-chronos">
+                    <img id="qty-chronos-img" src="../img/Coin.png" alt="">
+                    <p id="qty-chronos-text">123</p>
+                </div>
+                <a class="navbar-a" href=""><img class="navbar-buttons-img" id="icon-add-service" src="../img/Briefcase.png" alt=""></a>
+                <a class="navbar-a" href=""><img class="navbar-buttons-img" id="icon-add-service" src="../img/Profile.png" alt=""></a>
+                <a class="navbar-a" href=""><img class="navbar-buttons-img" id="icon-add-service" src="../img/Settings.png" alt=""></a>
+            </div>
         </div>
-        <div id="container-form">
-            <h1>Bem vindo!</h1>
-            <input type="text" name="nome" placeholder="Nome completo"  id="input-name" required>
-            <input type="email" name="email" placeholder="E-Mail Válido" id="input-email" required>
-            <input type="tel" name="celular" placeholder="Celular (com DDD)" id="input-phone-number" required>
-            <input type="password" name="senha" placeholder="Senha" id="input-password" required>
-            <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" id="input-confirm-password" required>
-            
-            <input type="file" name="input-file" id="input-file" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" required>
-            <button type="button" id="btn-annex">
-                Documento com foto
-                <img src="../img/Import.png" alt="" class="icon-import">
-            </button>
-            <span id="file-chosen"></span>
+        <div id="container-background">
+            <img class="background" id="comb-left" src="../img/Comb3.png" alt="">
+            <img class="background" id="comb-right" src="../img/Comb4.png" alt="">
+        </div>
 
-            <a href="Login.html" id="a-register"><button type="submit" id="btn-register">Criar Conta</button></a>
-            <a href="Login.html" id="a-login"><button id="btn-login">Entrar</button></a>
+        <div class="order-creation-modal">
+            <h2>Criação do pedido</h2>
+            <form>
+                <input type="text" placeholder="Título">
+                <input type="text" placeholder="Descrição">
+                <input type="text" placeholder="Preço de Chronos">
+                <input type="text" placeholder="Categoria(s)">
+                <div class="image-upload">
+                    <input type="text" placeholder="Imagem do pedido">
+                    <button type="button"><img class="background" id="add-image" src="../img/AddImage.png" alt=""></button>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-button">Cancelar</button>
+                    <button type="submit" class="create-button">Criar pedido</button>
+                </div>
+            </form>
         </div>
     </div>
-    <script src="../js/AccountCreation.js"></script>
+    </main>
 </body>
 </html>
+
