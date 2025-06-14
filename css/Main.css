@@ -142,6 +142,7 @@ input[type=text]::placeholder {
     width: 15%;
 }
 
+<<<<<<< HEAD
 #container-form {
     display: flex;
     flex-direction: column;
@@ -190,3 +191,11 @@ input[type=text]::placeholder {
     gap: 10px; /* Reduza o gap para aproximar texto e imagem */
     margin: 20px;
 }
+=======
+#container-make-request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--branco);
+}
+>>>>>>> 717d60761876b8319854848a0e5a75b7dd968275
