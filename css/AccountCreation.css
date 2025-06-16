@@ -20,6 +20,13 @@
     border-radius: 40px;
 }
 
+#register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 #container-form h1 {
     margin: 0;
     margin-bottom: 5%;
@@ -67,11 +74,12 @@ input[type=password]::placeholder {
 }
 
 #btn-register {
-    width: 100%;
+    width: 74.5%;
     background-color: var(--amarelo-um-pouco-escuro);
     color: var(--branco);
     border: none;
     justify-content: center;
+    margin-top: 5%;
 }
 
 #btn-login {
@@ -91,15 +99,23 @@ input[type=password]::placeholder {
     padding-right: 10px;
 }
 
-#a-register, #a-login {
+#file-chosen {
+    font-size: 14px;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+#input-file {
+    display: none;
+}
+
+#a-login {
     text-decoration: none;
     width: 74.5%;
     cursor: pointer;
     position: relative;
-}
-
-#a-register {
-    margin-top: 5%;
 }
 
 #a-login {
