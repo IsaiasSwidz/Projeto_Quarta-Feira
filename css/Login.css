@@ -20,12 +20,19 @@
     border-radius: 40px;
 }
 
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 #container-form h1 {
     margin: 0;
     margin-bottom: 5%;
 }
 
-input[type=number],
+input[type=email],
 input[type=password] {
     font-size: 20px;
     background: var(--branco);
@@ -36,7 +43,7 @@ input[type=password] {
     width: 70%;
 }
 
-input[type=number]::placeholder,
+input[type=email]::placeholder,
 input[type=password]::placeholder {
     color: var(--texto-placeholder);
 }
@@ -85,7 +92,7 @@ input[type=password]::placeholder {
     font-style: italic;
 }
 
-#a-register, #a-login {
+#a-register {
     text-decoration: none;
     width: 74.5%;
     cursor: pointer;
@@ -94,10 +101,6 @@ input[type=password]::placeholder {
 
 #a-register {
     margin-top: 5px;
-}
-
-#a-login {
-    margin-top: 7.5%;
 }
 
 #btn-register, #btn-login {
@@ -123,6 +126,8 @@ input[type=password]::placeholder {
     background-color: var(--amarelo-um-pouco-escuro);
     color: var(--branco);
     border: none;
+    margin-top: 7.5%;
+    width: 74.5%;
 }
 
 .background {

@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
     <link rel="stylesheet" href="../css/Login.css">
     <link rel="stylesheet" href="../assets/index.css">
-    <link rel="script" src="../js/Login.js"></link>
-    <title>Página de Login</title>
 </head>
 <body>
     <div id="container">
@@ -23,18 +22,22 @@
         </div>
         <div id="container-form">
             <h1>Bem vindo de volta!</h1>
-            <input type="number" name="cpf" placeholder="CPF" id="input-cpf" required>
-            <input type="password" name="senha" placeholder="Senha" id="input-password" required>
-            <div id="bottom-inputs-container">
-                <input type="checkbox" name="remember-me" id="checkbox-remeber-me" class="checkbox">
-                <label for="checkbox-remeber-me">Lembre-se de mim</label>
-                <a href="ForgotPassword.html" id="a-forgot-password">Esqueceu a senha?</a>
-            </div>
+            <form id="login-form">
+                <input type="email" name="email" id="input-email" placeholder="E-mail" required>
+                <input type="password" name="senha" id="input-password" placeholder="Senha" required>
 
-            <a href="Main.html" id="a-login"><button type="submit" id="btn-login">Entrar</button></a>
+                <div id="bottom-inputs-container">
+                    <input type="checkbox" name="remember-me" id="checkbox-remeber-me" class="checkbox">
+                    <label for="checkbox-remeber-me">Lembre-se de mim</label>
+                    <a href="ForgotPassword.html" id="a-forgot-password">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" id="btn-login">Entrar</button>
+            </form>
+
             <a href="AccountCreation.html" id="a-register"><button id="btn-register">Criar Conta</button></a>
         </div>
     </div>
-    <script src="../js/AccountCreation.js"></script>
+    <script src="../js/Login.js"></script>
 </body>
 </html>
