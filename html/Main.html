@@ -50,36 +50,39 @@
             </div>
             <div id="container-requests">
                 <div id="requests-filter">
-
-                    <h3>Avaliação de usuário</h3>
-                    <select name="avaliacao" id="filtro-avaliacao">
-                        <option value="0">0 - 1 estrelas</option>
-                        <option value="1">1 - 2 estrelas</option>
-                        <option value="2">2 - 3 estrelas</option>
-                        <option value="3">3 - 4 estrelas</option>
-                        <option value="4">4 - 5 estrelas</option>
-                    </select>
-
-                    <div class="slider-container">
-                        <label for="tempoSlider">Tempo</label>
-                        <input type="range" id="tempoSlider" min="5" max="100" step="5" value="5">
-                        <span id="tooltip" class="tooltip">0-5</span>
+                    <div class="filter-item">
+                        <h3>Avaliação de usuário</h3>
+                        <select name="avaliacao" id="filtro-avaliacao">
+                            <option value="0">0 - 1 estrelas</option>
+                            <option value="1">1 - 2 estrelas</option>
+                            <option value="2">2 - 3 estrelas</option>
+                            <option value="3">3 - 4 estrelas</option>
+                            <option value="4">4 - 5 estrelas</option>
+                        </select>
                     </div>
-
-                    <h3>Categorias</h3>
-                    <label for="filtro-categorias">Categorias</label>
-                    <input list="categorias-lista" id="filtro-categorias" name="categorias" placeholder="Digite ou escolha">
-                    <!-- As categorias estão sendo armazenadas em JS, no arquivo Main.js -->
-                    <datalist id="categorias-lista"></datalist>
-
-                    <h3>Ordenação</h3>
-                    <select name="ordenacao" id="filtro-ordenacao">
-                        <option value="0">Mais recentes</option>
-                        <option value="1">Mais antigos</option>
-                        <option value="2">Melhores avaliados</option>
-                        <option value="3">Maior tempo</option>
-                        <option value="4">Menor tempo</option>
-                    </select>
+                    <div class="filter-item">
+                        <h3>Tempo </h3>
+                        <div class="slider-container">
+                            <input type="range" id="tempoSlider" min="5" max="100" step="5" value="5">
+                            <span id="tooltip" class="tooltip">0-5</span>
+                        </div>
+                    </div>
+                    <div class="filter-item">
+                        <h3>Categorias</h3>
+                        <input list="categorias-lista" id="filtro-categorias" name="categorias" placeholder="Digite ou escolha">
+                        <!-- As categorias estão sendo armazenadas em JS, no arquivo Main.js -->
+                        <datalist id="categorias-lista"></datalist>
+                    </div>
+                    <div class="filter-item">
+                        <h3>Ordenação</h3>
+                        <select name="ordenacao" id="filtro-ordenacao">
+                            <option value="0">Mais recentes</option>
+                            <option value="1">Mais antigos</option>
+                            <option value="2">Melhores avaliados</option>
+                            <option value="3">Maior tempo</option>
+                            <option value="4">Menor tempo</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>

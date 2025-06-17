@@ -230,12 +230,9 @@ input[type=range]::-webkit-slider-thumb {
 
 #requests-filter {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
-    width: 100%;
     gap: 24px; /* Espaço entre os itens */
-    flex-wrap: wrap; /* Opcional: permite quebrar linha em telas pequenas */
 }
 
 #requests-filter > * {
@@ -243,4 +240,42 @@ input[type=range]::-webkit-slider-thumb {
     width: auto;
     min-width: unset;
     flex: none;
+    color: var(--branco);
+}
+
+#filtro-avaliacao {
+    color: black;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 150px;
+}
+
+.filter-item h3 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    padding: 0; /* Remova o padding */
+}
+
+.slider-container .tooltip {
+    opacity: 0; /* Esconde a tooltip inicialmente */
+}
+
+.slider-container:hover .tooltip {
+    opacity: 1; /* Mostra a tooltip ao passar o mouse */
 }
