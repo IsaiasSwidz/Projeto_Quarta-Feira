@@ -346,6 +346,6 @@ input[type=range]::-webkit-slider-thumb {
     background-color: var(--branco);
 }
 
-#service-card {
-    background-color: var(--cinza);
-}
+/* #service-card {
+    background-color: var(--branco-acinzentado);
+} */
