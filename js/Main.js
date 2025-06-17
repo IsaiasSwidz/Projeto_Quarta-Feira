@@ -20,49 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-<<<<<<< HEAD
-// Executa quando o DOM estiver pronto
-document.addEventListener("DOMContentLoaded", popularCategoriasDatalist);
-
-// Slider e tooltip
-document.addEventListener("DOMContentLoaded", function() {
-    // Popular categorias
-    popularCategoriasDatalist();
-
-    // Slider
-    const slider = document.getElementById("tempo-slider");
-    const tooltip = document.getElementById("tooltip");
-
-    function updateTooltip() {
-        const val = parseInt(slider.value);
-        let texto;
-        if (val === 0) {
-            texto = "0-5";
-        } else {
-            texto = `${val - 5}-${val}`;
-        }
-        tooltip.textContent = texto;
-
-        // Calcula a posição do thumb
-        const min = parseInt(slider.min);
-        const max = parseInt(slider.max);
-        const percent = (val - min) / (max - min);
-
-        // Largura do slider e do thumb
-        const sliderWidth = slider.offsetWidth;
-        const thumbWidth = 20; // mesmo valor do CSS
-
-        // Posição do centro do thumb
-        const pos = percent * (sliderWidth - thumbWidth) + (thumbWidth / 2);
-
-        // Posiciona a tooltip
-        tooltip.style.left = `calc(${pos}px - ${tooltip.offsetWidth / 2}px)`;
-    }
-
-    slider.addEventListener("input", updateTooltip);
-    window.addEventListener("resize", updateTooltip); // Atualiza ao redimensionar
-    updateTooltip();
-=======
     // Função para remover tag
     window.removeTag = function (element) {
         element.parentElement.remove();
@@ -170,5 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Erro:", error);
         requestsContainer.innerHTML = "<p>Falha ao carregar os serviços.</p>";
     });
->>>>>>> f01745a654d3d13d1b718dbab219eab851ca4be4
 });
