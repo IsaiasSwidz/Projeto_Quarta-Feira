@@ -32,29 +32,44 @@
             </div>
         </div>
         <div id="container-background">
-            <img class="background" id="comb-left" src="../img/Comb3.png" alt="">
-            <img class="background" id="comb-right" src="../img/Comb4.png" alt="">
+            <img class="background" id="comb-left" src="../img/Comb5.png" alt="">
+            <img class="background" id="comb-right" src="../img/Comb6.png" alt="">
+            <img class="background" id="bar-right" src="../img/BarDescendingRight.png" alt="">
+            <img class="background" id="bar-left" src="../img/BarAscending.png" alt="">
         </div>
 
-        <div class="order-creation-modal">
-            <h2>Criação do pedido</h2>
-            <form>
-                <input type="text" placeholder="Título">
-                <input type="text" placeholder="Descrição">
-                <input type="text" placeholder="Preço de Chronos">
-                <input type="text" placeholder="Categoria(s)">
-                <div class="image-upload">
-                    <input type="text" placeholder="Imagem do pedido">
-                    <button type="button"><img class="background" id="add-image" src="../img/AddImage.png" alt=""></button>
+        <!-- Formulário principal -->
+        <div id="container-form">
+            <h1>Criação do pedido</h1>
+
+            <!-- Formulário com id -->
+            <form id="register-form" class="form-container">
+                <input type="text" name="titulo" placeholder="Título" id="input-title" required>
+                <textarea name="descricao" placeholder="Descrição" id="input-description" required></textarea>
+                <input type="number" name="tempoChronos" placeholder="Tempo em Chronos" id="input-time-chronos" required>
+                <!-- Campo de categoria -->
+                <div class="category-input-container">
+                    <label for="input-category" id="label-category">Categorias</label>
+                    <div class="input-with-tags">
+                        <input type="text" name="categoria" id="input-category" placeholder="Escreva e aperte Enter" />
+                        <div id="category-tag-list" class="tag-list"></div>
+                    </div>
                 </div>
-                <div class="form-actions">
-                    <button type="button" class="cancel-button">Cancelar</button>
-                    <button type="submit" class="create-button">Criar pedido</button>
+
+                <input type="file" name="input-service-image" id="input-service-image" accept=".jpg,.jpeg,.png">
+                <button type="button" id="btn-service-image">
+                    Imagem do Pedido
+                    <img src="../img/AddImage.png" alt="" id="icon-service-image">
+                </button>
+                <span id="service-image-chosen"></span>
+
+                <div id="bottom-btns">
+                    <a href="Main.html" id="a-cancel"><button id="btn-cancel">Cancelar</button></a>
+                    <button type="submit" id="btn-register">Criar Pedido</button>
                 </div>
             </form>
         </div>
+        <script src="../js/ServiceCreation.js"></script>
     </div>
-    </main>
 </body>
 </html>
-
