@@ -18,6 +18,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
             body: JSON.stringify({ email, password })
         });
 
+        
         if (response.ok) {
             const token = await response.text();
             localStorage.setItem("auth_token", token); // Armazena o token
