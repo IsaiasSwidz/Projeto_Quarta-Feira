@@ -255,9 +255,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .filter-item h3 {
-    align-items: center;
-    display: flex;
-    justify-content: center;
     width: 100%;
     margin: 5px;
     margin-top: 30px;
@@ -267,7 +264,6 @@ input[type=range]::-webkit-slider-thumb {
 
 .slider-container {
     position: relative;
-    width: 100%;
     margin-top: 0;
     padding: 0; /* Remova o padding */
 }
@@ -279,3 +275,70 @@ input[type=range]::-webkit-slider-thumb {
 .slider-container:hover .tooltip {
     opacity: 1; /* Mostra a tooltip ao passar o mouse */
 }
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 364px;
+    height: auto;
+}
+
+.filter-item h3 {
+    padding-left: 40px;
+    width: 100%;
+    height: auto;
+}
+
+#filtro-avaliacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 364px;
+    height: 30px;
+    border: 1px solid var(--branco);
+    border-radius: 20px;
+    background-color: var(--branco);
+}
+
+#tempo-slider {
+    border-radius: 20px;
+    width: 364px;
+    height: 30px;
+    padding: 0 20px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--amarelo-claro) /* Cor da bolinha */
+}
+
+#filtro-categorias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 364px;
+    height: 30px;
+    border: 1px solid var(--branco);
+    border-radius: 20px;
+    background-color: var(--branco);
+}
+
+#filtro-ordenacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 364px;
+    height: 30px;
+    border: 1px solid var(--branco);
+    border-radius: 20px;
+    background-color: var(--branco);
+}
+
