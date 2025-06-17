@@ -229,11 +229,15 @@ input[type=range]::-webkit-slider-thumb {
     width: 100%;
 }
 
+
 #requests-filter {
     display: flex;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
-    gap: 24px; /* Espaço entre os itens */
+    width: 100%;
+    gap: 5%;
+    flex-wrap: wrap; /* Opcional: permite quebrar linha em telas pequenas */
 }
 
 #requests-filter h3 {
