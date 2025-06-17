@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Main.css">
     <link rel="stylesheet" href="../assets/index.css">
-    <link rel="script" src="../js/Main.js"></link>
     <title>Página Inicial</title>
 </head>
 <body>
@@ -48,10 +47,10 @@
                 </div>
             </div>
             <div id="container-requests">
-                <!-- <div id="requests-filter">
-                    <div id="avaliation-container">
+                <div id="requests-filter">
+                    <div class="filter-item">
                         <h3>Avaliação de usuário</h3>
-                        <select name="avaliacao" id="select-avaliation">
+                        <select name="avaliacao" id="filtro-avaliacao">
                             <option value="0">0 - 1 estrelas</option>
                             <option value="1">1 - 2 estrelas</option>
                             <option value="2">2 - 3 estrelas</option>
@@ -81,30 +80,7 @@
                             <option value="4">Menor tempo</option>
                         </select>
                     </div>
-                    <div id="slider-container">
-                        <h3>Tempo</h3>
-                        <input type="range" id="tempoSlider" min="5" max="100" step="5" value="5">
-                        <span id="tooltip" class="tooltip">0-5</span>
-                    </div>
-
-                    <div id="category-container">
-                        <h3 id="label-category">Categorias</h3>
-                        <input type="text" name="categoria" id="input-category" placeholder="Escreva e aperte Enter" />
-                        <div id="category-tag-list" class="tag-list"></div>
-                    </div>
-                    
-                    <div id="ordering-container">
-                        <h3>Ordenação</h3>
-                        <select name="ordenacao" id="filtro-ordenacao">
-                            <option value="0">Mais recentes</option>
-                            <option value="1">Mais antigos</option>
-                            <option value="2">Melhores avaliados</option>
-                            <option value="3">Maior tempo</option>
-                            <option value="4">Menor tempo</option>
-                        </select>
-                    </div>
                 </div>
-            </div> -->
             <div id="requests"></div>
         </div>
     </div>

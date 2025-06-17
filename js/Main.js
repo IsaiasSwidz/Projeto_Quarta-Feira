@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ----- TAG DE CATEGORIAS -----
     const inputCategory = document.getElementById('input-category');
     const tagList = document.getElementById('category-tag-list');
 
-    inputCategory.addEventListener('keydown', function (e) {
+    inputCategory?.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' && inputCategory.value.trim() !== "") {
             e.preventDefault();
             const category = inputCategory.value.trim();
 
-            // Cria elemento da tag
             const tag = document.createElement('span');
             tag.className = 'tag';
             tag.innerHTML = `
@@ -16,67 +16,63 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             tagList.appendChild(tag);
 
-            inputCategory.value = ""; // Limpa o input
+            inputCategory.value = "";
         }
     });
 
-    // Função para remover tag
     window.removeTag = function (element) {
         element.parentElement.remove();
     }
 
-    //Categorias de trabalhos
-
-    const categorias = [
-        "Pintura",
-        "Mecânica",
-        "Engenharia",
-        "Elétrica",
-        // Adicione mais categorias aqui
-    ];
+    const categorias = ["Pintura", "Mecânica", "Engenharia", "Elétrica"];
 
     function popularCategoriasDatalist() {
         const datalist = document.getElementById("categorias-lista");
         if (!datalist) return;
-        datalist.innerHTML = ""; // Limpa opções antigas
+        datalist.innerHTML = "";
         categorias.forEach(cat => {
-        const option = document.createElement("option");
+            const option = document.createElement("option");
             option.value = cat;
             datalist.appendChild(option);
         });
     }
 
-    // const slider = document.getElementById("tempoSlider");
-    // const tooltip = document.getElementById("tooltip");
+    popularCategoriasDatalist();
 
-    // // Função para posicionar o tooltip proporcionalmente ao thumb
-    // function updateSliderTooltip(value) {
-    //     const min = slider.min || 0;
-    //     const max = slider.max || 100;
-    //     const percent = ((value - min) / (max - min)) * 100;
+    // ----- SLIDER E TOOLTIP -----
+    const slider = document.getElementById("tempo-slider");
+    const tooltip = document.getElementById("tooltip");
 
-    //     tooltip.textContent = `${value - 5}-${value}`;
+    function updateTooltip() {
+        if (!slider || !tooltip) return;
 
-    //     // Ajusta a posição do tooltip com base na porcentagem
-    //     tooltip.style.left = `calc(${percent}% + (${percent} * -0.1px))`; // pequeno ajuste visual
-    // }
+        const val = parseInt(slider.value);
+        const min = parseInt(slider.min);
+        const max = parseInt(slider.max);
+        const percent = (val - min) / (max - min);
 
-    // // Inicializa com o valor padrão
-    // updateSliderTooltip(parseInt(slider.value));
+        const texto = val === 0 ? "0-5" : `${val - 5}-${val}`;
+        tooltip.textContent = texto;
 
-    // // Atualiza enquanto o usuário arrasta
-    // slider.addEventListener("input", () => {
-    //     updateSliderTooltip(parseInt(slider.value));
-    // });
-});
+        const sliderWidth = slider.offsetWidth;
+        const thumbWidth = 20;
+        const pos = percent * (sliderWidth - thumbWidth) + (thumbWidth / 2);
 
-document.addEventListener("DOMContentLoaded", function () {
+        tooltip.style.left = `calc(${pos}px - ${tooltip.offsetWidth / 2}px + 25px)`;
+    }
+
+    if (slider && tooltip) {
+        slider.addEventListener("input", updateTooltip);
+        window.addEventListener("resize", updateTooltip);
+        updateTooltip();
+    }
+
+    // ----- FETCH DE SERVIÇOS -----
     const requestsContainer = document.getElementById("requests");
-
-    // URL do endpoint do backend (ajuste conforme necessário)
     const apiUrl = "http://localhost:8085/service/get/all";
-
     const token = localStorage.getItem("auth_token");
+
+    if (!requestsContainer) return;
 
     if (!token) {
         console.error("Token não encontrado.");
@@ -90,9 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Authorization": "Bearer " + token
         }
     }).then(response => {
-        if (!response.ok) {
-            throw new Error("Erro ao carregar os serviços.");
-        }
+        if (!response.ok) throw new Error("Erro ao carregar os serviços.");
         return response.json();
     }).then(servicos => {
         if (servicos.length === 0) {
@@ -102,16 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         servicos.forEach(servico => {
             const card = document.createElement("div");
-            card.className = "service-card";
+            card.id = "service-card";
 
-            // Monta as categorias como string
             const categoriasStr = servico.categories?.join(", ");
-
-            // Define o tipo de imagem com base na extensão do base64 (ex: image/png ou image/jpeg)
             const base64Image = `data:image/png;base64,${servico.service_image}`;
 
             card.innerHTML = `
-                <img src="${base64Image}" alt="Imagem do Serviço" class="service-image">
+                <img src="${base64Image}" alt="Imagem do Serviço" id="service-image">
                 <div class="service-info">
                     <h4>${servico.title}</h4>
                     <p><strong>Descrição:</strong> ${servico.description}</p>
