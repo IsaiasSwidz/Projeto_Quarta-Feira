@@ -41,18 +41,17 @@
                 <div id="makerequest-content">
                     <h3>As horas acumuladas no seu banco representam oportunidades reais de ação.</h3>
                     <div id="makerequest-btn">
-                        <button>Faça um pedido<img src="/img/Plus.png" alt=""></button>
+                        <a id="add-service-a" href="ServiceCreation.html">Faça um pedido<img src="/img/Plus.png" alt=""></a>
                     </div>
                     <h3>Ou realize o de alguém</h3>
                     <img src="/img/White Lines.png" alt="" id="white-lines">
                 </div>
-                
             </div>
             <div id="container-requests">
-                <div id="requests-filter">
-                    <div class="filter-item">
+                <!-- <div id="requests-filter">
+                    <div id="avaliation-container">
                         <h3>Avaliação de usuário</h3>
-                        <select name="avaliacao" id="filtro-avaliacao">
+                        <select name="avaliacao" id="select-avaliation">
                             <option value="0">0 - 1 estrelas</option>
                             <option value="1">1 - 2 estrelas</option>
                             <option value="2">2 - 3 estrelas</option>
@@ -70,7 +69,6 @@
                     <div class="filter-item">
                         <h3>Categorias</h3>
                         <input list="categorias-lista" id="filtro-categorias" name="categorias" placeholder="Digite ou escolha">
-                        <!-- As categorias estão sendo armazenadas em JS, no arquivo Main.js -->
                         <datalist id="categorias-lista"></datalist>
                     </div>
                     <div class="filter-item">
@@ -83,8 +81,31 @@
                             <option value="4">Menor tempo</option>
                         </select>
                     </div>
+                    <div id="slider-container">
+                        <h3>Tempo</h3>
+                        <input type="range" id="tempoSlider" min="5" max="100" step="5" value="5">
+                        <span id="tooltip" class="tooltip">0-5</span>
+                    </div>
+
+                    <div id="category-container">
+                        <h3 id="label-category">Categorias</h3>
+                        <input type="text" name="categoria" id="input-category" placeholder="Escreva e aperte Enter" />
+                        <div id="category-tag-list" class="tag-list"></div>
+                    </div>
+                    
+                    <div id="ordering-container">
+                        <h3>Ordenação</h3>
+                        <select name="ordenacao" id="filtro-ordenacao">
+                            <option value="0">Mais recentes</option>
+                            <option value="1">Mais antigos</option>
+                            <option value="2">Melhores avaliados</option>
+                            <option value="3">Maior tempo</option>
+                            <option value="4">Menor tempo</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
+            </div> -->
+            <div id="requests"></div>
         </div>
     </div>
     <script src="../js/AccountCreation.js"></script>
