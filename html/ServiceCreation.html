@@ -46,12 +46,12 @@
             <form id="register-form" class="form-container">
                 <input type="text" name="titulo" placeholder="Título" id="input-title" required>
                 <textarea name="descricao" placeholder="Descrição" id="input-description" required></textarea>
-                <input type="number" name="tempoChronos" placeholder="Tempo em Chronos" id="input-time-chronos" required>
+                <input type="number" min="1" name="tempoChronos" placeholder="Tempo em Chronos" id="input-time-chronos" required>
                 <!-- Campo de categoria -->
                 <div class="category-input-container">
                     <label for="input-category" id="label-category">Categorias</label>
                     <div class="input-with-tags">
-                        <input type="text" name="categoria" id="input-category" placeholder="Escreva e aperte Enter" required />
+                        <input type="text" name="categoria" id="input-category" placeholder="Escreva e aperte Enter" />
                         <div id="category-tag-list" class="tag-list"></div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     Imagem do Pedido
                     <img src="../img/AddImage.png" alt="" id="icon-service-image">
                 </button>
-                <span id="service-image-chosen"></span>
+                <!-- <span id="service-image-chosen"></span> -->
 
                 <div id="bottom-btns">
                     <a href="Main.html" id="a-cancel"><button id="btn-cancel">Cancelar</button></a>

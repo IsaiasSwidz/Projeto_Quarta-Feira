@@ -98,30 +98,33 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             card.className = "service-card";
 
-            const categoriasStr = servico.categories?.join(", ");
             const base64Image = `data:image/png;base64,${servico.serviceImage}`;
 
             console.log(servico)
 
+            let categoriesStr = "";
+
             servico.categoryEntities.forEach(category => {
-                if (category == servico.categoryEntities[0]) {
-                    card.innerHTML = `
-                        <img src="${base64Image}" alt="Imagem do Serviço" id="service-image">
-                        <div class="service-info">
-                            <p class="service-title">${servico.title}</p>
-                            <p class="user-service">Postado por ${servico.userEntity.name}</p>
-                            <div class="qty-chronos-service">
-                                <img class="qty-chronos-service-img" src="../img/Coin.png" alt="">
-                                <p class="qty-chronos-service-text">${servico.timeChronos} chronos</p>
-                            </div>
-                            <div class="category-service">
-                                <img class="category-service-img" src="../img/Paintbrush.png" alt="">
-                                <p class="category-service-text">${category?.name}</p>
-                            </div>
-                        </div>
-                    `;
-                }
+                categoriesStr += `<div class="category-service">
+                                        <img class="category-service-img" src="../img/Paintbrush.png" alt="">
+                                        <p class="category-service-text">${category?.name}</p>
+                                    </div>`
             })
+
+            card.innerHTML = `
+                <img src="${base64Image}" alt="Imagem do Serviço" class="service-image">
+                <div class="service-info">
+                    <p class="service-title">${servico.title}</p>
+                    <p class="user-service">Postado por ${servico.userEntity.name}</p>
+                    <div class="qty-chronos-service">
+                        <img class="qty-chronos-service-img" src="../img/Coin.png" alt="">
+                        <p class="qty-chronos-service-text">${servico.timeChronos} chronos</p>
+                    </div>
+                    <div class="categories-service">
+                        ${categoriesStr}
+                    </div>
+                </div>
+            `;
 
             
             if (!card.innerHTML) {
