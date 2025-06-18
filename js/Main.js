@@ -101,16 +101,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const categoriasStr = servico.categories?.join(", ");
             const base64Image = `data:image/png;base64,${servico.service_image}`;
 
-            card.innerHTML = `
-                <img src="${base64Image}" alt="Imagem do Serviço" id="service-image">
-                <div class="service-info">
-                    <h4>${servico.title}</h4>
-                    <p><strong>Descrição:</strong> ${servico.description}</p>
-                    <p><strong>Categorias:</strong> ${categoriasStr}</p>
-                    <p><strong>Tempo:</strong> ${servico.time_chronos} horas</p>
-                    <p><strong>Usuário:</strong> ${servico.user}</p>
-                </div>
-            `;
+            servico.categoryEntities.forEach(category => {
+                if (category == servico.categoryEntities[0]) {
+                    card.innerHTML = `
+                        <img src="${base64Image}" alt="Imagem do Serviço" id="service-image">
+                        <div class="service-info">
+                            <h4>${servico.title}</h4>
+                            <p><strong>Descrição:</strong> ${servico.description}</p>
+                            <p><strong>Categorias:</strong> ${category?.name}</p>
+                            <p><strong>Tempo:</strong> ${servico.timeChronos} chronos</p>
+                            <p><strong>Usuário:</strong> ${servico.userEntity.name}</p>
+                        </div>
+                    `;
+                }
+            })
 
             requestsContainer.appendChild(card);
         });
