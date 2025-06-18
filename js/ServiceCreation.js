@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('btn-service-image').addEventListener('click', function () {
+        document.getElementById('input-service-image').click();
+    });
+
+    document.getElementById('input-service-image').addEventListener('change', function () {
+        const fileName = this.files[0] ? this.files[0].name : '';
+        document.getElementById('service-image-chosen').textContent = fileName;
+    });
+
     const inputCategory = document.getElementById('input-category');
     const tagList = document.getElementById('category-tag-list');
 
