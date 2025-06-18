@@ -193,6 +193,18 @@
     color: var(--preto);
 }
 
+#container-requests {
+    width: 100%;
+}
+
+#requests-filter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+    gap: 5%; /* Espaçamento entre cards */
+    padding: 0;
+    width: 100%;
+}
+
 .slider-container {
     position: relative;
     width: 100%;
@@ -233,39 +245,9 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-#requests-filter {
-    display: flex;
-    align-items: flex-start; /* ou center, se preferir todos centralizados verticalmente */
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap; /* Caso precise quebrar para telas menores */
-}
-
-/* #requests-filter > * {
-    margin: 0;
-    width: auto;
-    min-width: unset;
-    flex: none;
-    color: var(--branco);
-} */
 
 #filtro-avaliacao {
     color: black;
-}
-
-.filter-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 150px;
-}
-
-.filter-item h3 {
-    width: 100%;
-    margin: 5px;
-    margin-top: 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .slider-container {
@@ -295,7 +277,7 @@ input[type=range]::-webkit-slider-thumb {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    width: 100%;
     height: auto;
 }
 
@@ -349,15 +331,16 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #requests {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: space-between;
-    /* padding: 16px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+    gap: 5%; /* Espaçamento entre cards */
+    padding: 0;
+    width: 100%;
 }
 
-#service-card {
+.service-card {
     background-color: #B5BFAE;
-    width: 22.5%;
+    width: 100%;
+    box-sizing: border-box; /* Garante que padding/border não afetem a largura */
+    margin: 0;
 }

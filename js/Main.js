@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         servicos.forEach(servico => {
             const card = document.createElement("div");
-            card.id = "service-card";
+            card.className = "service-card";
 
             const categoriasStr = servico.categories?.join(", ");
             const base64Image = `data:image/png;base64,${servico.service_image}`;
@@ -116,6 +116,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
 
+            
+            if (!card.innerHTML) {
+                card.innerHTML = `
+                <img src="${base64Image}" alt="Imagem do Serviço" id="service-image">
+                <div class="service-info">
+                    <h4>${servico.title}</h4>
+                    <p><strong>Descrição:</strong> ${servico.description}</p>
+                    <p><strong>Categorias:</strong> Nenhuma</p>
+                    <p><strong>Tempo:</strong> ${servico.timeChronos} chronos</p>
+                    <p><strong>Usuário:</strong> ${servico.userEntity.name}</p>
+                </div>
+                `;
+            }
             requestsContainer.appendChild(card);
         });
     }).catch(error => {
