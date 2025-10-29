@@ -42,16 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Converte o arquivo para Base64 (se houver)
-        if (fileInput && fileInput.files.length > 0) {
-            const file = fileInput.files[0];
-            try {
-                documentBase64 = await convertToBase64(file);
-            } catch (err) {
-                alert("Erro ao converter documento para Base64.");
-                console.error(err);
-                return;
-            }
+        const file = fileInput.files[0];
+        let base64Data;
+        try {
+            base64Data = await convertToBase64(file);
+        } catch (err) {
+            alert("Erro ao converter documento para Base64.");
+            console.error(err);
+            return;
         }
 
         // Monta o payload
@@ -61,8 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
             phoneNumber,
             password,
             confirmPassword,
-            document: documentBase64
+            document: {
+                name: file.name,
+                type: file.type,
+                data: base64Data
+            }
         };
+
+        console.log(JSON.stringify(payload))
 
         // Envia para o backend
         try {
